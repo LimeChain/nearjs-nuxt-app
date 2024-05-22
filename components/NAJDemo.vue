@@ -104,9 +104,10 @@ const stateChangeFunctionCall = async () => {
         contractId: "usdt.tether-token.near",
         methodName: "ft_transfer",
         args: {
-          amount: amount.value,
+          amount: `${amount.value}`,
           receiver_id: receiver.value,
         },
+        attachedDeposit: "1",
       });
     console.log("Function Call Response: ", functionCallRes);
   } catch (error) {
