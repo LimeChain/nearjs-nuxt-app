@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "http-browserify": "^1.7.0",
+    "near-api-js": "^4.0.1",
+    "node-polyfill-webpack-plugin": "^3.0.0",
+    "nuxt": "^3.11.2",
+    "secure-random": "^1.1.2",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@nuxt/webpack-builder": "^3.11.2",
+    "vite-plugin-node-polyfills": "^0.21.0"
+  }
+}
