@@ -25,13 +25,13 @@
             type="number"
             placeholder="Amount"
             class="input-field"
-          >
+          />
           <input
             v-model="receiver"
             type="text"
             placeholder="Receiver ID"
             class="input-field"
-          >
+          />
           <button class="send-button" @click="stateChangeFunctionCall">
             Send
           </button>
