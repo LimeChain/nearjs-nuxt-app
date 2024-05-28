@@ -2,17 +2,17 @@
   <ClientOnly>
     <div class="container">
       <div class="profile-section">
-        <button class="connect-button" @click="handleConnect">
+        <Button :customClass="['connect-button']" @click="handleConnect">
           {{ !connected ? "Connect" : "Disconnect" }}
-        </button>
+        </Button>
         <p v-if="connected" class="account-id">
           Current Account ID: {{ accountId }}
         </p>
       </div>
       <div v-if="connected" class="metadata-section">
-        <button class="metadata-button" @click="readMetadata">
+        <Button @click="readMetadata" :customClass="['metadata-button']">
           Read Token Metadata
-        </button>
+        </Button>
         <div v-if="tokenMetadata" class="token-info">
           <p>Token Name: {{ tokenMetadata?.name }}</p>
           <p>Token Symbol: {{ tokenMetadata?.symbol }}</p>
@@ -32,9 +32,12 @@
             placeholder="Receiver ID"
             class="input-field"
           />
-          <button class="send-button" @click="stateChangeFunctionCall">
+          <Button
+            @click="stateChangeFunctionCall"
+            :customClass="['send-button']"
+          >
             Send
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -135,38 +138,13 @@ const stateChangeFunctionCall = async () => {
   margin-bottom: 20px;
 }
 
-.profile-section .connect-button {
-  background-color: #27ae60; /* Green */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.profile-section .connect-button:hover {
-  background-color: #219a52; /* Darker green on hover */
-}
-
 .account-id {
   font-size: 1.2em;
 }
 
 /* Metadata section */
 .metadata-section .metadata-button {
-  background-color: #27ae60; /* Green */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
   margin-bottom: 20px;
-}
-
-.metadata-section .metadata-button:hover {
-  background-color: #219a52; /* Darker green on hover */
 }
 
 .token-info {
@@ -201,7 +179,7 @@ const stateChangeFunctionCall = async () => {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 97%;
 }
 
 .transfer-section .send-button {
@@ -213,9 +191,5 @@ const stateChangeFunctionCall = async () => {
   border-radius: 5px;
   transition: background-color 0.3s;
   width: 100%;
-}
-
-.transfer-section .send-button:hover {
-  background-color: #219a52; /* Darker green on hover */
 }
 </style>
