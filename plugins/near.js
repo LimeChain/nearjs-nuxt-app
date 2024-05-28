@@ -1,7 +1,7 @@
 // Import NEAR dependencies
 import * as nearAPI from "near-api-js";
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   return {
     provide: {
       wallet: {

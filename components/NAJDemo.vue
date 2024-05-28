@@ -2,7 +2,7 @@
   <ClientOnly>
     <div class="container">
       <div class="profile-section">
-        <button @click="handleConnect" class="connect-button">
+        <button class="connect-button" @click="handleConnect">
           {{ !connected ? "Connect" : "Disconnect" }}
         </button>
         <p v-if="connected" class="account-id">
@@ -10,7 +10,7 @@
         </p>
       </div>
       <div v-if="connected" class="metadata-section">
-        <button @click="readMetadata" class="metadata-button">
+        <button class="metadata-button" @click="readMetadata">
           Read Token Metadata
         </button>
         <div v-if="tokenMetadata" class="token-info">
@@ -25,14 +25,14 @@
             type="number"
             placeholder="Amount"
             class="input-field"
-          />
+          >
           <input
             v-model="receiver"
             type="text"
             placeholder="Receiver ID"
             class="input-field"
-          />
-          <button @click="stateChangeFunctionCall" class="send-button">
+          >
+          <button class="send-button" @click="stateChangeFunctionCall">
             Send
           </button>
         </div>
@@ -43,7 +43,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watchEffect } from "vue";
-import connect from "~/plugins/near.js";
 const { $wallet } = useNuxtApp();
 
 const connected = ref($wallet?.currentUser !== null);
